@@ -48,10 +48,13 @@ INSERT INTO credential (employee_id, cert_id)
 VALUES ( 1,1), (1,5), (1,2), (2,1), (2,2), (3,3), (3,1), (3,2), (4,3), (4,4), (5,4), (5,1);
 
 
---Question 4 (Dispay employee Table)
+--Question 5 (Dispay employee Table)
 SELECT * FROM employee;
+
 .print
---Question 5 (Display certification Table)
+--Question 6 (Display certification Table)
 SELECT * FROM certification;
+
+--Question 7 (Display credential Table)
 .print
 SELECT * FROM credential;
