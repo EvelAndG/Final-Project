@@ -36,7 +36,11 @@ VALUES ('George', 'Costanza', 'Architect', 100),
 
 --Inserting into table 2
 INSERT INTO certification (cert_name, category, price)
-VALUES ('Grand Wizardry', 'Magicka', 20000);
+VALUES ('Grand Wizardry', 'Magicka', 20000),
+('Yo-Yo Mastery', 'Physics', 400),
+('Animal Whispering', 'Supernatural', 1000),
+('Ninja Sneak', 'Shadow Arts', 1200),
+('Napping', 'Laziness', 100);
 
 
 --Display Table 1
