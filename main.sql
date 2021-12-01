@@ -21,7 +21,8 @@ CREATE TABLE certification (
 
 --Question 3 Table Creation
 CREATE TABLE credential (
-	employee_id INTEGER
+	employee_id INTEGER REFERENCES employee(employee_id),
+	cert_id INTEGER REFERENCES certification(cert_id)
 
 );
 
@@ -42,9 +43,15 @@ VALUES ('Grand Wizardry', 'Magicka', 20000),
 ('Ninja Sneak', 'Shadow Arts', 1200),
 ('Napping', 'Laziness', 100);
 
+--Inserting into table 3
+INSERT INTO credential (employee_id, cert_id)
+VALUES ( 1,1), (1,5), (1,2), (2,1), (2,2), (3,3), (3,1), (3,2), (4,3), (4,4), (5,4), (5,1);
 
---Display Table 1
+
+--Question 4 (Dispay employee Table)
 SELECT * FROM employee;
 .print
---Display Table 2
+--Question 5 (Display certification Table)
 SELECT * FROM certification;
+.print
+SELECT * FROM credential;
