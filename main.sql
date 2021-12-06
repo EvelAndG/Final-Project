@@ -49,12 +49,32 @@ VALUES ( 1,1), (1,5), (1,2), (2,1), (2,2), (3,3), (3,1), (3,2), (4,3), (4,4), (5
 
 
 --Question 5 (Dispay employee Table)
+.print Question #5
 SELECT * FROM employee;
 
-.print
+
 --Question 6 (Display certification Table)
+.print
+.print Question #6
 SELECT * FROM certification;
 
 --Question 7 (Display credential Table)
 .print
+.print Question #7
 SELECT * FROM credential;
+
+--Question 8 (Write a query that shows only the first and last name of employees who have earned the certification with id 3)
+.print
+.print Question #8
+SELECT employee.first_name, employee.last_name FROM employee
+INNER JOIN credential
+ON employee.employee_id = credential.employee_id
+WHERE credential.cert_id = 3;
+
+--Question 9 (Write a query that shows the certification name and category earned by the employee with id 2.)
+.print
+.print Question #9
+SELECT certification.cert_name, certification.category FROM certification
+INNER JOIN credential
+ON credential.cert_id = certification.cert_id
+WHERE credential.employee_id = 2;
