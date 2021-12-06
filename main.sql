@@ -89,4 +89,18 @@ WHERE credential.employee_id = 2;
 SELECT employee.employee_id, employee.job_title, certification.cert_name, certification.price
 FROM (employee INNER JOIN credential ON employee.employee_id = credential.employee_id) INNER JOIN certification ON certification.cert_id = credential.cert_id;
 
+--Question 11 (Write a query to show all employees with less than 500 stocks and which certifications they have.  Show the fields used in the example below)
+.print
+.print ----------------------------------------------------------------------------------------
+.print Question #11
+SELECT employee.first_name, employee.last_name, employee.job_title, employee.stocks, certification.cert_name
+FROM (employee INNER JOIN credential ON employee.employee_id = credential.employee_id) INNER JOIN certification ON certification.cert_id = credential.cert_id
+WHERE employee.stocks < 500;
 
+--Question 12 (Write a query to display all certifications with a price over 150 and which employees have earned them.)
+.print
+.print ----------------------------------------------------------------------------------------
+.print Question #12
+SELECT employee.employee_id, certification.cert_name, certification.category, certification.price
+FROM (employee INNER JOIN credential ON employee.employee_id = credential.employee_id) INNER JOIN certification ON certification.cert_id = credential.cert_id 
+WHERE certification.price > 150;
