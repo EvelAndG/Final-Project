@@ -55,16 +55,19 @@ SELECT * FROM employee;
 
 --Question 6 (Display certification Table)
 .print
+.print ----------------------------------------------------------------------------------------
 .print Question #6
 SELECT * FROM certification;
 
 --Question 7 (Display credential Table)
 .print
+.print ----------------------------------------------------------------------------------------
 .print Question #7
 SELECT * FROM credential;
 
 --Question 8 (Write a query that shows only the first and last name of employees who have earned the certification with id 3)
 .print
+.print ----------------------------------------------------------------------------------------
 .print Question #8
 SELECT employee.first_name, employee.last_name FROM employee
 INNER JOIN credential
@@ -78,3 +81,12 @@ SELECT certification.cert_name, certification.category FROM certification
 INNER JOIN credential
 ON credential.cert_id = certification.cert_id
 WHERE credential.employee_id = 2;
+
+--Question 10 (Write a query to display the emp_id and job_title from employees and the name and price from certifications for each certification earned by each employee)
+.print
+.print ----------------------------------------------------------------------------------------
+.print Question #10
+SELECT employee.employee_id, employee.job_title, certification.cert_name, certification.price
+FROM (employee INNER JOIN credential ON employee.employee_id = credential.employee_id) INNER JOIN certification ON certification.cert_id = credential.cert_id;
+
+
